@@ -41,6 +41,7 @@ class App extends StatelessWidget {
           ),
         ),
         scaffoldBackgroundColor: AppColors.black,
+        backgroundColor: AppColors.black,
         primarySwatch: AppColors.materialColor,
         iconTheme: const IconThemeData(
           color: AppColors.white,

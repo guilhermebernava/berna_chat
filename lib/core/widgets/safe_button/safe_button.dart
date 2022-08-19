@@ -71,7 +71,8 @@ class _SafeButtonState extends State<SafeButton> with TickerProviderStateMixin {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              color: widget.color.withOpacity(_animation.value),
+              color: widget.color.withOpacity(
+                  widget.color != Colors.transparent ? _animation.value : 0),
               borderRadius: BorderRadius.circular(100),
               border: Border.all(
                   color: AppColors.primary.withOpacity(_animation.value),

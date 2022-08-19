@@ -5,7 +5,7 @@ class AppColors {
   static const primary = Color(0xff6202ee);
   static const secundary = Color(0xffffc120);
   static const white = Color(0xfff1f1f6);
-  static const black = Color(0xff111111);
+  static const black = Color.fromARGB(255, 10, 10, 10);
   static const lightBlack = Color(0xff333333);
 
   static const _color = 0xff6202ee;
