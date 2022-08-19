@@ -1,19 +1,57 @@
-import 'package:berna_chat/modules/chat/chat_module.dart';
+import 'package:berna_chat/core/services/util_services.dart';
+import 'package:berna_chat/core/themes/app_text_style.dart';
+import 'package:berna_chat/core/widgets/safe_button/safe_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
   Widget build(BuildContext context) {
+    final size = UtilServices.mediaQuery(context);
+
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Modular.to.pushNamed(ChatModule.moduleRoute);
-          },
-          child: const Text('LOGAR'),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 20,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SafeButton(
+              size: size,
+              onTap: () {
+                print('vagabunda');
+              },
+              child: Text(
+                'Login',
+                style: AppTextStyle.appFontInter(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SafeButton(
+              color: Colors.transparent,
+              size: size,
+              onTap: () {
+                print('vagabunda');
+              },
+              child: Text(
+                'Sign In',
+                style: AppTextStyle.appFontInter(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
